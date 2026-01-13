@@ -5,6 +5,7 @@ import { Chamado } from "./chamado";
  * Implementações podem utilizar memória, arquivos, bancos de dados, etc.
  */
 export interface ICallRepository{
+
     /**
      * Persiste um novo chamado no repositório.
      * @param chamado instância de Chamado a ser criada

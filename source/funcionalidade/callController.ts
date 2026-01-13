@@ -23,6 +23,7 @@ export class CallController implements ICallController{
      * @param nome nome do solicitante
      * @param descricao descrição do problema reportado
      * @returns true se o repositório persistir com sucesso, caso contrário false
+     * @
      */
     abrirChamado(nome: string, descricao: string): boolean {
         let novoChamado : Chamado;
