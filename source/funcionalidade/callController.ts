@@ -44,9 +44,15 @@ export class CallController implements ICallController{
      * @param chamado instância a ser marcada como atendida
      * @returns true se atualizado com sucesso, false caso contrário
      */
-    marcarComoAtendido(chamado: Chamado): boolean {
-        chamado.setStatus(true);
-        return this.callRepository.atualizarChamado(chamado);
+    marcarComoAtendido(id: number): boolean {
+    let i:number;
+    for(i=0;i<this.callRepository.listarChamados().length;i++){
+        if(this.callRepository.listarChamados()[i].id===id){
+            this.callRepository.listarChamados()[i].setStatus(true);
+            return true;
+        }
     }
+    return false;
+}
 
 }

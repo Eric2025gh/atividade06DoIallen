@@ -1,4 +1,5 @@
 import { ICallController } from "../funcionalidade/iCallController";
+import { Chamado } from "../modelo/chamado";
 import { ICallUI } from "./iCallUI";
 
 /**
@@ -38,8 +39,19 @@ export class TextCallUI implements ICallUI{
                     }
                     break;
                 case 2:
+                    let i:number;
+                    for(i=0;i<this.callController.listarChamado().length;i++){
+                        alert(this.callController.listarChamado()[i].solicitante + " - " + this.callController.listarChamado()[i].descricao + " - " + (this.callController.listarChamado()[i].status?"Atendido":"Pendente"));// como funciona o status ?
+                    }
                     break;
                 case 3:
+                   let id:number = Number(prompt('Digite o ID do chamado a ser marcado como concluído'));
+                     let sucesso:boolean = this.callController.marcarComoAtendido(id);
+                        if(sucesso){
+                            alert('Chamado marcado como concluído');
+                        }else{
+                            alert('Não foi possível marcar o chamado como concluído');
+                        }   
                     break;
                 case 0:
                     break;

@@ -24,6 +24,6 @@ export interface ICallController{
      * @param chamado instância de chamado a ser atualizada
      * @returns true se a operação for bem-sucedida, false caso contrário
      */
-    marcarComoAtendido(chamado:Chamado):boolean;
+    marcarComoAtendido(id:number):boolean;
 
 }

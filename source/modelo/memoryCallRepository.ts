@@ -10,7 +10,7 @@ export class MemoryCallRepository implements ICallRepository{
     /**
      * Repositório responsável por armazenar todos os chamados atá então.
      */
-     repository:Chamado[] = [];
+     private repository:Chamado[] = [];
     /**
      * Cria e armazena um novo chamado na coleção em memória.
      * @param chamado instância a ser adicionada
